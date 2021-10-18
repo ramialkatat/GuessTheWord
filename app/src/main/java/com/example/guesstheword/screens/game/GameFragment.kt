@@ -20,7 +20,6 @@ import android.os.Build
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
-import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -60,7 +59,7 @@ class GameFragment : Fragment() {
 
         binding.gameViewModel = viewModel
 
-        binding.setLifecycleOwner(this)//viewLifecycleOwner allows us to use Live Data to automatically update our data binding layouts
+        binding.lifecycleOwner = this//viewLifecycleOwner allows us to use Live Data to automatically update our data binding layouts
 
 //        binding.correctButton.setOnClickListener {
 //            viewModel.onCorrect()
