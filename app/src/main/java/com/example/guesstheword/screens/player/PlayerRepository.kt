@@ -23,4 +23,5 @@ class PlayerRepository(private val dao: PlayerDBDao) {
     suspend fun deleteAll(): Int {
         return dao.deleteAll()
     }
+
 }

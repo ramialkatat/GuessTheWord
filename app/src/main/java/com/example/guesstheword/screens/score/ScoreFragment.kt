@@ -1,39 +1,34 @@
-/*
- * Copyright 2018, The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.example.guesstheword.screens.score
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.guesstheword.R
+import com.example.guesstheword.database.Player
+import com.example.guesstheword.database.PlayerDB
+import com.example.guesstheword.database.Score
+import com.example.guesstheword.databinding.PlayerActivityBinding
 import com.example.guesstheword.databinding.ScoreFragmentBinding
+import com.example.guesstheword.screens.player.PlayerRepository
+import com.example.guesstheword.screens.player.PlayerViewModel
+import com.example.guesstheword.screens.player.PlayerViewModelFactory
+import com.example.guesstheword.screens.player.RecyclerViewAdapter
 
 /**
  * Fragment where the final score is shown, after the game is over
  */
 class ScoreFragment : Fragment() {
-
+    private lateinit var binding: ScoreFragmentBinding
+    private lateinit var adapter: ScoreRecyclerViewAdapter
     private lateinit var viewModel: ScoreViewModel
     private lateinit var viewModelFactory: ScoreViewModelFactory
 
@@ -50,10 +45,10 @@ class ScoreFragment : Fragment() {
             container,
             false
         )
-
+        val dao = PlayerDB.getInstance(requireNotNull(this.activity).application).playerDBDao
+        val repository = ScoreRepository(dao)
         val scoreFragmentArgs by navArgs<ScoreFragmentArgs>()
-
-        viewModelFactory = ScoreViewModelFactory(scoreFragmentArgs.score)
+        viewModelFactory = ScoreViewModelFactory(scoreFragmentArgs.score, repository)
         viewModel = ViewModelProvider(this, viewModelFactory)
             .get(ScoreViewModel::class.java)
 
@@ -62,6 +57,8 @@ class ScoreFragment : Fragment() {
 //            binding.scoreText.text = newScore.toString()
 //        }) //not needed anymore
         binding.scoreViewModel = viewModel
+        binding.lifecycleOwner = this
+        initRecyclerView()
 
         // Navigates back to title when button is pressed
         viewModel.eventPlayAgain.observe(viewLifecycleOwner, Observer { playAgain ->
@@ -72,5 +69,19 @@ class ScoreFragment : Fragment() {
         })
 
         return binding.root
+    }
+
+    private fun initRecyclerView() {
+        binding.scoreRecyclerView.layoutManager =
+            LinearLayoutManager(requireNotNull(this.activity).application)
+        binding.scoreRecyclerView.adapter = adapter
+        displayScoresList()
+    }
+
+    private fun displayScoresList() {
+        viewModel.getSavedScores().observe(viewLifecycleOwner, Observer {
+            adapter.setList(it)
+            adapter.notifyDataSetChanged()
+        })
     }
 }

@@ -1,5 +1,6 @@
 package com.example.guesstheword.database
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
@@ -8,6 +9,9 @@ import kotlinx.coroutines.flow.Flow
 interface PlayerDBDao {
     @Insert
      suspend fun insertPlayer(player: Player): Long //when insert is called, Room creates the row from the entity object and inserts it into the DB
+
+    @Insert
+    suspend fun insertScore(score: Score): Long
 
     @Update
     suspend fun updatePlayer(player: Player): Int
@@ -21,6 +25,8 @@ interface PlayerDBDao {
 //    @Query("SELECT * FROM Player ORDER BY P_ID DESC") //return all the rows of the table sorted by ID in descending order
 //    fun getAllPlayers(): LiveData<List<Player>> //Room allows us to get back LiveData, and it ensures LiveData's updated whenever the DB is updated.
     //However, considering MVVM architecture, getting data as a Flow is the best practice. We can easily convert the Flow into LiveData inside the ViewModel. Since LiveData needs a lifecycle, using LiveData inside repository or below classes can cause unexpected errors.
-@Query("SELECT * FROM Player ORDER BY P_ID DESC") //return all the rows of the table sorted by ID in descending order
-    fun getAllPlayers(): Flow<List<Player>>
+@Query("SELECT * FROM Player") //return all the rows of the table
+    fun getAllPlayers(): LiveData<List<Player>>
+    @Query("SELECT * FROM Score") //return all the rows of the Score table
+    fun getAllScores(): LiveData<List<Score>>
 }

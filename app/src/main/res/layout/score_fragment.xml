@@ -23,21 +23,23 @@
             name="scoreViewModel"
             type="com.example.guesstheword.screens.score.ScoreViewModel" />
     </data>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/score_layout"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:orientation="vertical"
         tools:context=".screens.score.ScoreFragment">
 
         <TextView
             android:id="@+id/you_scored_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="369dp"
+            android:layout_height="29dp"
             android:layout_marginTop="32dp"
             android:fontFamily="sans-serif"
             android:text="@string/you_scored"
+            android:textAlignment="center"
             android:textColor="@color/black_text_color"
-            android:textSize="14sp"
+            android:textSize="20sp"
             android:textStyle="normal"
             app:layout_constraintBottom_toTopOf="@+id/score_text"
             app:layout_constraintEnd_toEndOf="parent"
@@ -48,15 +50,16 @@
 
         <TextView
             android:id="@+id/score_text"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif"
+            android:text="@{String.valueOf(scoreViewModel.score)}"
             android:textColor="@color/black_text_color"
+            android:textAlignment="center"
             android:textSize="34sp"
             android:textStyle="normal"
-            android:text="@{String.valueOf(scoreViewModel.score)}"
             app:layout_constraintBottom_toTopOf="@+id/play_again_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -67,15 +70,35 @@
 
         <Button
             android:id="@+id/play_again_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
             android:layout_marginBottom="32dp"
-            android:text="@string/play_again"
             android:onClick="@{() -> scoreViewModel.onPlayAgain()}"
+            android:text="@string/play_again"
+            android:theme="@style/GoButton"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/display_scores"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="32dp"
+            android:onClick="@{()->scoreViewModel.save()}"
+            android:text="Display All scores"
+            android:textSize="24sp"
             android:theme="@style/GoButton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/score_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp" />
+
+    </LinearLayout>
 </layout>

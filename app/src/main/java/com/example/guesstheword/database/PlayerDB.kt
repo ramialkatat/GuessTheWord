@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities= [Player::class],version = 1, exportSchema = false)
+@Database(entities= [Player::class,Score::class],version = 3, exportSchema = false)
 abstract class PlayerDB:RoomDatabase() //This class is abstract because Room creates the implementation for it and not us.An abstract class cannot be instantiated. Means, we cannot create object of abstract class.
 {
     abstract val playerDBDao:PlayerDBDao//telling the database about our DAO so that we can interact with the DB

@@ -57,7 +57,8 @@ class GameFragment : Fragment() {
         // Get the viewModel
         viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
 
-        binding.gameViewModel = viewModel
+        binding.gameViewModel = viewModel // Set the viewmodel for databinding - this allows the bound layout access to all of the data in the VieWModel
+
 
         binding.lifecycleOwner = this//viewLifecycleOwner allows us to use Live Data to automatically update our data binding layouts
 
@@ -89,6 +90,13 @@ class GameFragment : Fragment() {
                 val action = GameFragmentDirections.actionGameToScore(currentScore)
                 findNavController(this).navigate(action)
                 viewModel.onGameFinishComplete()
+            }
+        })
+
+        viewModel.eventBuzz.observe(viewLifecycleOwner, Observer { buzzType ->
+            if (buzzType != GameViewModel.BuzzType.NO_BUZZ) {
+                buzz(buzzType.pattern)
+                viewModel.onBuzzComplete()
             }
         })
 
