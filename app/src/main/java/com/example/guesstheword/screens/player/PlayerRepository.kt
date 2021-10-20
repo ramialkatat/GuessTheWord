@@ -1,5 +1,6 @@
 package com.example.guesstheword.screens.player
 
+import android.content.Context
 import com.example.guesstheword.database.Player
 import com.example.guesstheword.database.PlayerDBDao
 
@@ -7,6 +8,7 @@ import com.example.guesstheword.database.PlayerDBDao
 class PlayerRepository(private val dao: PlayerDBDao) {
 
     val players = dao.getAllPlayers()
+
 
     suspend fun insert(player: Player): Long {
         return dao.insertPlayer(player)
@@ -22,5 +24,17 @@ class PlayerRepository(private val dao: PlayerDBDao) {
 
     suspend fun deleteAll(): Int {
         return dao.deleteAll()
+    }
+
+    fun count(username: String): Int {
+        return dao.count(username)
+    }
+
+     suspend fun getUserName(userName: String): Player? {
+        return dao.getUsername(userName)
+    }
+
+    suspend fun validateEmail(email: String):Player?{
+        return dao.validateEmail(email)
     }
 }

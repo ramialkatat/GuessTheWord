@@ -15,6 +15,7 @@
         android:orientation="vertical"
         tools:context=".screens.player.PlayerActivity">
 
+
         <EditText
             android:id="@+id/name_text"
             android:layout_width="match_parent"
@@ -26,7 +27,6 @@
             android:inputType="textPersonName"
             android:text="@={myViewModel.inputName}"
             android:textStyle="bold" />
-
 
         <EditText
             android:id="@+id/email_text"
@@ -40,6 +40,30 @@
             android:inputType="textEmailAddress"
             android:text="@={myViewModel.inputEmail}"
             android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/username_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:hint="Enter your username"
+            android:inputType="textPersonName"
+            android:text="@={myViewModel.inputUsername}"
+            android:textStyle="bold" />
+
+        <EditText
+        android:id="@+id/password_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="5dp"
+        android:ems="10"
+        android:hint="Enter your password"
+        android:inputType="textPassword"
+        android:text="@={myViewModel.inputPassword}"
+        android:textStyle="bold" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="@{()->myViewModel.saveOrUpdate()}"
-                android:text="save/update"
+                android:text="@={myViewModel.saveOrUpdateButtonText}"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -61,17 +85,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
-                android:text="clear/delete"
+                android:onClick="@{()->myViewModel.clearAllOrDelete()}"
+                android:text="@={myViewModel.clearAllOrDeleteButtonText}"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/player_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp" />
-
         <Button
             android:id="@+id/playButton"
             android:layout_width="match_parent"
@@ -79,5 +97,10 @@
             android:text="play"
             android:textSize="59sp"
             android:textStyle="bold" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/player_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp" />
     </LinearLayout>
 </layout>

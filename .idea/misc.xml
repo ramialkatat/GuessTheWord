@@ -3,17 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/CMEIntern/Desktop/GuessTheWord/app/src/main/res/layout/game_fragment.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/CMEIntern/Desktop/GuessTheWord/app/src/main/res/layout/main_activity.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/CMEIntern/Desktop/GuessTheWord/app/src/main/res/layout/player_fragment.xml" value="0.25" />
-        <entry key="..\:/Users/CMEIntern/Desktop/GuessTheWord/app/src/main/res/layout/score_fragment.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/CMEIntern/Desktop/GuessTheWord/app/src/main/res/layout/title_fragment.xml" value="0.23385416666666667" />
-        <entry key="..\:/Users/MV/AndroidStudioProjects/GuessTheWord/app/src/main/res/layout/activity_main.xml" value="0.12771739130434784" />
-        <entry key="..\:/Users/MV/AndroidStudioProjects/GuessTheWord/app/src/main/res/layout/game_fragment.xml" value="0.128125" />
-        <entry key="..\:/Users/MV/AndroidStudioProjects/GuessTheWord/app/src/main/res/layout/score_fragment.xml" value="0.2" />
-        <entry key="..\:/Users/Mr Atet/StudioProjects/GuessTheWord/app/src/main/res/layout/activity_main.xml" value="0.17255434782608695" />
-        <entry key="..\:/Users/Mr Atet/StudioProjects/GuessTheWord/app/src/main/res/layout/player_fragment.xml" value="0.17255434782608695" />
-        <entry key="..\:/Users/Mr Atet/StudioProjects/GuessTheWord/app/src/main/res/layout/score_fragment.xml" value="0.17255434782608695" />
+        <entry key="..\:/Users/CMEIntern/Downloads/GuessTheWord/app/src/main/res/layout/game_fragment.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/CMEIntern/Downloads/GuessTheWord/app/src/main/res/layout/player_activity.xml" value="0.14855072463768115" />
+        <entry key="..\:/Users/CMEIntern/Downloads/GuessTheWord/app/src/main/res/layout/score_fragment.xml" value="0.17831813576494426" />
       </map>
     </option>
   </component>

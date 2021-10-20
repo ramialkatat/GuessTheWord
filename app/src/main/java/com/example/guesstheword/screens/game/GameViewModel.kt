@@ -18,10 +18,10 @@ package com.example.guesstheword.screens.game
 
 import android.os.CountDownTimer
 import android.text.format.DateUtils
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import com.example.guesstheword.database.Score
+import com.example.guesstheword.screens.score.ScoreRepository
+import kotlinx.coroutines.launch
 
 private val CORRECT_BUZZ_PATTERN = longArrayOf(100, 100, 100, 100, 100, 100)
 private val PANIC_BUZZ_PATTERN = longArrayOf(0, 200)
@@ -52,9 +52,7 @@ class GameViewModel : ViewModel() {
         // This is the total time of the game
         private const val COUNTDOWN_TIME =
             10000L //a normal countdown would be 60 secs, but I've chosen it to be 10 for testing purposes
-
     }
-
     private val timer: CountDownTimer
 
     private val _currentTime = MutableLiveData<Long>()
@@ -84,6 +82,11 @@ class GameViewModel : ViewModel() {
     private val _eventGameFinish = MutableLiveData<Boolean>()
     val eventGameFinish: LiveData<Boolean>
         get() = _eventGameFinish
+
+    // Event that triggers the phone to buzz using different patterns, determined by BuzzType
+    private val _eventBuzz = MutableLiveData<BuzzType>()
+    val eventBuzz: LiveData<BuzzType>
+        get() = _eventBuzz
 
     init {
         resetList()
@@ -165,10 +168,13 @@ class GameViewModel : ViewModel() {
         _eventGameFinish.value = false
     }
 
+    fun onBuzzComplete() {
+        _eventBuzz.value = BuzzType.NO_BUZZ
+    }
+
     override fun onCleared() {
         super.onCleared()
         timer.cancel()
     }
-
 
 }
