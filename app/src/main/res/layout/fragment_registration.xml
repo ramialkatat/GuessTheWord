@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="myViewModel"
             type="com.example.guesstheword.screens.registration.RegisterViewModel" />
@@ -64,6 +66,7 @@
             android:inputType="textPassword"
             android:text="@={myViewModel.inputPassword}"
             android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -80,10 +83,11 @@
                 android:textStyle="bold" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="14dp"
             android:orientation="vertical">
 
             <TextView
@@ -99,8 +103,6 @@
                 android:text="Login Here"
                 android:textSize="18sp"
                 android:textStyle="bold" />
-
-
         </LinearLayout>
 
     </LinearLayout>

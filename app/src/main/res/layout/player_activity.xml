@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".screens.player.PlayerActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/nav_host_fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    <data>
+
+        <variable
+            name="myViewModel"
+            type="com.example.guesstheword.screens.player.PlayerViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="552dp"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/form_navigation" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".screens.player.PlayerActivity">
 
-</merge>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="485dp">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/nav_host_fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/form_navigation" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/player_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

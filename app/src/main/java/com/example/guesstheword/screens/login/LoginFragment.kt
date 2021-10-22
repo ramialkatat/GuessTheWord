@@ -1,6 +1,5 @@
 package com.example.guesstheword.screens.login
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,11 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.guesstheword.MainActivity
 import com.example.guesstheword.R
 import com.example.guesstheword.database.PlayerDB
 import com.example.guesstheword.databinding.FragmentLoginBinding
-import com.example.guesstheword.screens.player.PlayerActivity
 import com.example.guesstheword.screens.player.PlayerRepository
 
 class LoginFragment : Fragment() {

@@ -1,35 +1,26 @@
 package com.example.guesstheword.screens.score
 
-import android.app.Application
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.guesstheword.R
-import com.example.guesstheword.database.Player
 import com.example.guesstheword.database.PlayerDB
 import com.example.guesstheword.database.Score
-import com.example.guesstheword.databinding.PlayerActivityBinding
 import com.example.guesstheword.databinding.ScoreFragmentBinding
-import com.example.guesstheword.screens.player.PlayerRepository
-import com.example.guesstheword.screens.player.PlayerViewModel
-import com.example.guesstheword.screens.player.PlayerViewModelFactory
-import com.example.guesstheword.screens.player.RecyclerViewAdapter
 
-/**
- * Fragment where the final score is shown, after the game is over
- */
+
 class ScoreFragment : Fragment() {
-
+    lateinit var resultImage: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -81,18 +72,21 @@ class ScoreFragment : Fragment() {
                 viewModel.onPlayAgainComplete()
             }
         })
-
+        resultImage=binding.backgroundImage
+        viewModel.won.observe(viewLifecycleOwner, Observer { won->
+            setImage(won)
+        })
         return binding.root
     }
     private fun listItemClicked(score: Score) {
         Toast.makeText(activity, "", Toast.LENGTH_LONG).show()
     }
-    private fun initRecyclerView(application:Application,viewModel: ScoreViewModel) {
+//    private fun initRecyclerView(application:Application,viewModel: ScoreViewModel) {
 //        binding.scoreRecyclerView.layoutManager = LinearLayoutManager(activity)
 //        binding.scoreRecyclerView.adapter = adapter
 //
 //        displayScoresList(viewModel)
-    }
+//    }
 
 //    private fun displayScoresList(viewModel:ScoreViewModel) {
 //        viewModel._savedScore.observe(viewLifecycleOwner, Observer {
@@ -100,4 +94,11 @@ class ScoreFragment : Fragment() {
 //            adapter.notifyDataSetChanged()
 //        })
 //    }
+private fun setImage(b:Boolean) {
+    val drawableResource = when (b) {
+        true -> R.drawable.you_win
+        false -> R.drawable.try_again
+    }
+    resultImage.setImageResource(drawableResource)
+}
 }

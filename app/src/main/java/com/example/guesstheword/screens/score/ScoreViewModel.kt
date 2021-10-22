@@ -9,12 +9,22 @@ import kotlinx.coroutines.launch
 /**
  * ViewModel for the final screen showing the score
  */
-class ScoreViewModel(finalScore: Int, private val repository: ScoreRepository,application: Application) : AndroidViewModel(application) {
+class ScoreViewModel(
+    finalScore: Int,
+    private val repository: ScoreRepository,
+    application: Application
+) : AndroidViewModel(application) {
 
     val _savedScore: LiveData<List<Score>> = repository.scores
+
     private val _eventPlayAgain = MutableLiveData<Boolean>()
     val eventPlayAgain: LiveData<Boolean>
         get() = _eventPlayAgain
+
+    private val _won = MutableLiveData<Boolean>()
+    val won: LiveData<Boolean>
+        get() = _won
+
 
     private val _score = MutableLiveData<Int>()
     val score: LiveData<Int>
@@ -23,6 +33,7 @@ class ScoreViewModel(finalScore: Int, private val repository: ScoreRepository,ap
     init {
         _score.value = finalScore
         save()
+
     }
 
     fun onPlayAgain() {
@@ -35,9 +46,10 @@ class ScoreViewModel(finalScore: Int, private val repository: ScoreRepository,ap
     }
 
     private fun save() = viewModelScope.launch {
-        val newScore=Score(lastUpdate = "")
-        newScore.score=_score.value!!
+        val newScore = Score(lastUpdate = "")
+        newScore.score = _score.value!!
         insertScore(newScore)
+        _won.value = _score.value!!>0
     }
 
     private fun insertScore(score: Score) = viewModelScope.launch {

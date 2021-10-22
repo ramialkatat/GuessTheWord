@@ -29,7 +29,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".screens.game.GameFragment">
-
+        <ImageView
+            android:id="@+id/background_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="33dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/android_trivia" />
         <TextView
             android:id="@+id/word_is_text"
             android:layout_width="wrap_content"

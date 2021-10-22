@@ -66,7 +66,6 @@ class RegisterViewModel(private val repository: PlayerRepository) : ViewModel() 
                 }
             }
         }
-
     }
 
     private fun insertPlayer(player: Player) = viewModelScope.launch {

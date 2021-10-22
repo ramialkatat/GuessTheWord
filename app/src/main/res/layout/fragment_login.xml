@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="myViewModel"
             type="com.example.guesstheword.screens.login.LoginViewModel" />
@@ -13,6 +15,7 @@
         android:layout_height="match_parent"
         android:layout_margin="15dp"
         android:orientation="vertical"
+        app:srcCompat="@drawable/ic_launcher_foreground"
         tools:context=".screens.login.LoginFragment">
 
 
@@ -51,8 +54,8 @@
                 android:layout_width="32dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="submit"
                 android:onClick="@{()->myViewModel.save()}"
+                android:text="submit"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -61,13 +64,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="34dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:text="Don't have an account?" />
 
             <Button
@@ -78,9 +80,11 @@
                 android:text="Register Here!"
                 android:textSize="18sp"
                 android:textStyle="bold" />
-
-
         </LinearLayout>
-
+        <ImageView
+            android:id="@+id/background_image"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            app:srcCompat="@drawable/android_trivia" />
     </LinearLayout>
 </layout>
