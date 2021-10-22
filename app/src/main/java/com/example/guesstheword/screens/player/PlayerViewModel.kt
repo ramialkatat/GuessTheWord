@@ -1,10 +1,12 @@
 package com.example.guesstheword.screens.player
 
 import android.util.Patterns
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.guesstheword.Event
 import com.example.guesstheword.database.Player
-import com.example.guesstheword.database.Score
 import kotlinx.coroutines.launch
 
 class PlayerViewModel(private val repository: PlayerRepository) : ViewModel() {

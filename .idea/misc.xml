@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/CMEIntern/Downloads/GuessTheWord/app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="..\:/Users/CMEIntern/Downloads/GuessTheWord/app/src/main/res/layout/fragment_registration.xml" value="0.33" />
         <entry key="..\:/Users/CMEIntern/Downloads/GuessTheWord/app/src/main/res/layout/game_fragment.xml" value="0.17831813576494426" />
-        <entry key="..\:/Users/CMEIntern/Downloads/GuessTheWord/app/src/main/res/layout/player_activity.xml" value="0.14855072463768115" />
+        <entry key="..\:/Users/CMEIntern/Downloads/GuessTheWord/app/src/main/res/layout/list_item.xml" value="0.18070652173913043" />
+        <entry key="..\:/Users/CMEIntern/Downloads/GuessTheWord/app/src/main/res/layout/main_activity.xml" value="0.14855072463768115" />
+        <entry key="..\:/Users/CMEIntern/Downloads/GuessTheWord/app/src/main/res/layout/player_activity.xml" value="0.25" />
         <entry key="..\:/Users/CMEIntern/Downloads/GuessTheWord/app/src/main/res/layout/score_fragment.xml" value="0.17831813576494426" />
       </map>
     </option>

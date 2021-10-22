@@ -34,7 +34,7 @@ class ScoreViewModel(finalScore: Int, private val repository: ScoreRepository,ap
         _eventPlayAgain.value = false
     }
 
-    fun save() = viewModelScope.launch {
+    private fun save() = viewModelScope.launch {
         val newScore=Score(lastUpdate = "")
         newScore.score=_score.value!!
         insertScore(newScore)

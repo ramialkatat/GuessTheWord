@@ -53,9 +53,7 @@ class ScoreFragment : Fragment() {
         val viewModelFactory = ScoreViewModelFactory(scoreFragmentArgs.score, repository,application)
         val viewModel = ViewModelProvider(this, viewModelFactory).get(ScoreViewModel::class.java)
         val adapter= ScoreRecyclerViewAdapter { selectedItem: Score ->
-            listItemClicked(
-                selectedItem
-            )
+            listItemClicked(selectedItem)
         }
 
         // Add observer for score
