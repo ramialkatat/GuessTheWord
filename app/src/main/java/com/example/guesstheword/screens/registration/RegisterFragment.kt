@@ -54,7 +54,11 @@ class RegisterFragment : Fragment() {
         binding.loginNav.setOnClickListener{
             findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment())
         }
-
+        viewModel.navigatetoLogin.observe(viewLifecycleOwner, Observer { hasFinished->
+            if (hasFinished == true){
+                findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment())
+            }
+        })
 
         return binding.root
     }

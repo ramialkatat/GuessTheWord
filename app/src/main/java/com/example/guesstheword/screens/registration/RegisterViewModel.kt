@@ -19,6 +19,10 @@ class RegisterViewModel(private val repository: PlayerRepository) : ViewModel() 
 
     private val statusMessage = MutableLiveData<Event<String>>()
 
+    private val _navigatetoLogin = MutableLiveData<Boolean>()
+    val navigatetoLogin: LiveData<Boolean>
+        get() = _navigatetoLogin
+
     val message: LiveData<Event<String>>
         get() = statusMessage
 
@@ -51,6 +55,8 @@ class RegisterViewModel(private val repository: PlayerRepository) : ViewModel() 
                         inputEmail.value = ""
                         inputUsername.value = ""
                         inputPassword.value = ""
+
+
                     } else {
                         statusMessage.value =
                             Event("An account is already registered using that email!!")
@@ -68,6 +74,7 @@ class RegisterViewModel(private val repository: PlayerRepository) : ViewModel() 
         val newRowId = repository.insert(player)
         if (newRowId > -1) {
             statusMessage.value = Event("Player #$newRowId Inserted Successfully ")
+            _navigatetoLogin.value = true
         } else {
             statusMessage.value = Event("Error Occurred")
         }
