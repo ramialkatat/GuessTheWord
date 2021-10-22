@@ -42,8 +42,6 @@ import com.example.guesstheword.screens.score.ScoreViewModelFactory
  * Fragment where the game is played
  */
 class GameFragment : Fragment() {
-
-
     private lateinit var binding: GameFragmentBinding
 
     override fun onCreateView(

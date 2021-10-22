@@ -13,9 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="15dp"
         android:orientation="vertical"
-        app:srcCompat="@drawable/ic_launcher_foreground"
         tools:context=".screens.login.LoginFragment">
 
 
@@ -70,21 +68,34 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="129dp"
                 android:text="Don't have an account?" />
 
             <Button
                 android:id="@+id/registerNav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="113dp"
                 android:layout_weight="1"
                 android:text="Register Here!"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
+
         <ImageView
             android:id="@+id/background_image"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="50dp"
             app:srcCompat="@drawable/android_trivia" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="216dp"
+            android:layout_height="39dp"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="19dp"
+            android:text="Show All players"
+            android:textAlignment="center" />
     </LinearLayout>
 </layout>

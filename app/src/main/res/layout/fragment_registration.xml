@@ -87,12 +87,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="24dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="120dp"
                 android:text="Already have an account?" />
 
             <Button
@@ -101,6 +102,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Login Here"
+                android:layout_marginLeft="110dp"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>

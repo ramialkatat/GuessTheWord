@@ -1,6 +1,5 @@
 package com.example.guesstheword.screens.registration
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,15 +10,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.guesstheword.MainActivity
 import com.example.guesstheword.R
+import com.example.guesstheword.database.Player
 import com.example.guesstheword.database.PlayerDB
 import com.example.guesstheword.databinding.FragmentRegistrationBinding
-import com.example.guesstheword.screens.login.LoginFragmentDirections
 import com.example.guesstheword.screens.player.PlayerRepository
-import com.example.guesstheword.screens.player.PlayerViewModel
-import com.example.guesstheword.screens.player.PlayerViewModelFactory
-import com.example.guesstheword.screens.score.ScoreViewModel
+import com.example.guesstheword.screens.player.RecyclerViewAdapter
 
 
 class RegisterFragment : Fragment() {
@@ -44,7 +40,7 @@ class RegisterFragment : Fragment() {
         val repository = PlayerRepository(dao)
         val factory = RegisterViewModelFactory(repository)
         val viewModel = ViewModelProvider(this, factory).get(RegisterViewModel::class.java)
-        binding.myViewModel = viewModel
+         binding.myViewModel = viewModel
 
         viewModel.message.observe(viewLifecycleOwner, Observer {
             it.getContentIfNotHandled()?.let {

@@ -23,10 +23,18 @@
         <action
             android:id="@+id/action_loginFragment_to_mainActivity"
             app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_loginFragment_to_playerListFragment"
+            app:destination="@id/playerListFragment" />
     </fragment>
     <activity
         android:id="@+id/mainActivity"
         android:name="com.example.guesstheword.MainActivity"
         android:label="main_activity"
         tools:layout="@layout/main_activity" />
+    <fragment
+        android:id="@+id/playerListFragment"
+        android:name="com.example.guesstheword.screens.player.PlayerListFragment"
+        android:label="fragment_player_list"
+        tools:layout="@layout/fragment_player_list" />
 </navigation>

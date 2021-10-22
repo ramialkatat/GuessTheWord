@@ -14,6 +14,7 @@ import com.example.guesstheword.R
 import com.example.guesstheword.database.PlayerDB
 import com.example.guesstheword.databinding.FragmentLoginBinding
 import com.example.guesstheword.screens.player.PlayerRepository
+import com.example.guesstheword.screens.registration.RegisterFragmentDirections
 
 class LoginFragment : Fragment() {
     override fun onCreateView(
@@ -51,6 +52,10 @@ class LoginFragment : Fragment() {
                 findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToMainActivity())
             }
         })
+            binding.button.setOnClickListener{
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToPlayerListFragment())
+            }
+
         return binding.root
     }
 }

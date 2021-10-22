@@ -11,7 +11,7 @@ import com.example.guesstheword.databinding.ListItemBinding
 
 class RecyclerViewAdapter(private val clickListener: (Player) -> Unit) :
     RecyclerView.Adapter<MyViewHolder>() {
-    private val playersList = ArrayList<Player>()
+    private var playersList = ArrayList<Player>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -33,7 +33,6 @@ class RecyclerViewAdapter(private val clickListener: (Player) -> Unit) :
         playersList.addAll(players)
 
     }
-
 }
 
 class MyViewHolder(val binding: ListItemBinding) : RecyclerView.ViewHolder(binding.root) {
