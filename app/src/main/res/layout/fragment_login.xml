@@ -13,6 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/royal_blue"
         android:orientation="vertical"
         tools:context=".screens.login.LoginFragment">
 
@@ -23,11 +24,13 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="25dp"
             android:ems="10"
             android:hint="Enter your email"
             android:inputType="textEmailAddress"
             android:text="@={myViewModel.inputEmail}"
+            android:textColor="@color/white_text_color"
+            android:textColorHint="@color/white_text_color"
             android:textStyle="bold" />
 
         <EditText
@@ -40,6 +43,8 @@
             android:hint="Enter your password"
             android:inputType="textPassword"
             android:text="@={myViewModel.inputPassword}"
+            android:textColor="@color/white_text_color"
+            android:textColorHint="@color/white_text_color"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -49,9 +54,9 @@
 
             <Button
                 android:id="@+id/submit_login"
-                android:layout_width="32dp"
+                android:layout_width="320dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_marginLeft="45dp"
                 android:onClick="@{()->myViewModel.save()}"
                 android:text="submit"
                 android:textSize="18sp"
@@ -62,14 +67,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="34dp"
+            android:layout_marginTop="24dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="129dp"
-                android:text="Don't have an account?" />
+                android:text="Don't have an account?"
+
+                android:textColor="@color/white_text_color" />
 
             <Button
                 android:id="@+id/registerNav"
@@ -85,17 +92,19 @@
         <ImageView
             android:id="@+id/background_image"
             android:layout_width="match_parent"
-            android:layout_height="240dp"
-            android:layout_marginTop="50dp"
-            app:srcCompat="@drawable/android_trivia" />
+            android:layout_height="250dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/ic_bluelogo" />
 
         <Button
             android:id="@+id/button"
-            android:layout_width="216dp"
-            android:layout_height="39dp"
-            android:layout_marginLeft="95dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="95dp"
             android:layout_marginTop="19dp"
             android:text="Show All players"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </layout>

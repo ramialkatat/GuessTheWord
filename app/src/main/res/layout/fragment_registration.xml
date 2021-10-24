@@ -13,8 +13,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="15dp"
         android:orientation="vertical"
+        android:background="@color/royal_blue"
         tools:context=".screens.registration.RegisterFragment">
 
 
@@ -26,6 +26,8 @@
             android:layout_marginBottom="5dp"
             android:ems="10"
             android:hint="Enter your name"
+            android:textColorHint="@color/white_text_color"
+            android:textColor="@color/white_text_color"
             android:inputType="textPersonName"
             android:text="@={myViewModel.inputName}"
             android:textStyle="bold" />
@@ -39,6 +41,8 @@
             android:layout_marginBottom="5dp"
             android:ems="10"
             android:hint="Enter your email"
+            android:textColorHint="@color/white_text_color"
+            android:textColor="@color/white_text_color"
             android:inputType="textEmailAddress"
             android:text="@={myViewModel.inputEmail}"
             android:textStyle="bold" />
@@ -51,6 +55,8 @@
             android:layout_marginBottom="5dp"
             android:ems="10"
             android:hint="Enter your username"
+            android:textColorHint="@color/white_text_color"
+            android:textColor="@color/white_text_color"
             android:inputType="textPersonName"
             android:text="@={myViewModel.inputUsername}"
             android:textStyle="bold" />
@@ -63,6 +69,8 @@
             android:layout_marginBottom="5dp"
             android:ems="10"
             android:hint="Enter your password"
+            android:textColorHint="@color/white_text_color"
+            android:textColor="@color/white_text_color"
             android:inputType="textPassword"
             android:text="@={myViewModel.inputPassword}"
             android:textStyle="bold" />
@@ -93,7 +101,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="120dp"
+                android:layout_marginLeft="110dp"
+                android:textColor="@color/white_text_color"
                 android:text="Already have an account?" />
 
             <Button

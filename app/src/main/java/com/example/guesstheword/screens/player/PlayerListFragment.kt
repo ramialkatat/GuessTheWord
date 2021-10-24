@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -39,7 +40,8 @@ class PlayerListFragment : Fragment() {
         binding.myViewModel = playerViewModel
         binding.lifecycleOwner = this
 
-        val adapter = RecyclerViewAdapter { x: Player ->
+        val adapter = RecyclerViewAdapter { player: Player ->
+            Toast.makeText(activity, "Player ${player.P_ID} was selected", Toast.LENGTH_LONG).show()
         }
         binding.playerRecyclerView.layoutManager = LinearLayoutManager(activity)
         binding.playerRecyclerView.adapter = adapter
