@@ -2,12 +2,13 @@ package com.example.guesstheword.screens.player
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+
 //Since we need to pass some input data to the constructor of the viewModel , we need to create a factory class for viewModel.
 class PlayerViewModelFactory(
     private val repository: PlayerRepository
-):ViewModelProvider.Factory {
+) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if(modelClass.isAssignableFrom(PlayerViewModel::class.java)){
+        if (modelClass.isAssignableFrom(PlayerViewModel::class.java)) {
             return PlayerViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown View Model class")

@@ -1,9 +1,7 @@
 package com.example.guesstheword.screens.player
 
-import android.content.Context
 import com.example.guesstheword.database.Player
 import com.example.guesstheword.database.PlayerDBDao
-import java.net.PasswordAuthentication
 
 
 class PlayerRepository(private val dao: PlayerDBDao) {
@@ -27,15 +25,15 @@ class PlayerRepository(private val dao: PlayerDBDao) {
         return dao.deleteAll()
     }
 
-     suspend fun getUserName(userName: String): Player? {
+    suspend fun getUserName(userName: String): Player? {
         return dao.getUsername(userName)
     }
 
-    suspend fun validateEmail(email: String):Player?{
+    suspend fun validateEmail(email: String): Player? {
         return dao.validateEmail(email)
     }
 
-    suspend fun count(email:String,password:String):Int{
-        return dao.count(email,password)
+    suspend fun count(email: String, password: String): Int {
+        return dao.count(email, password)
     }
 }

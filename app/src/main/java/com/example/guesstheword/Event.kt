@@ -1,6 +1,5 @@
 package com.example.guesstheword
 
-
 open class Event<out T>(private val content: T) {
 
     var hasBeenHandled = false

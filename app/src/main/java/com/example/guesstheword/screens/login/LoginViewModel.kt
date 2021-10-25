@@ -33,7 +33,7 @@ class LoginViewModel(private val repository: PlayerRepository) : ViewModel() {
                 if ((repository.validateEmail(inputEmail.value!!)) != null) {
                     if ((repository.count(inputEmail.value!!, inputPassword.value!!)) > 0) {
                         statusMessage.value = Event("Login successful!")
-                        _navigatetoGame.value=true
+                        _navigatetoGame.value = true
                     } else statusMessage.value = Event("Email and password do not match")
                 } else {
                     statusMessage.value = Event("Email doesn't exist!")

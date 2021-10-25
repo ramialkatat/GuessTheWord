@@ -34,24 +34,24 @@ class RegisterFragment : Fragment() {
             container,
             false
         )
-        val application=requireNotNull(this.activity).application
+        val application = requireNotNull(this.activity).application
 
         val dao = PlayerDB.getInstance(application).playerDBDao
         val repository = PlayerRepository(dao)
         val factory = RegisterViewModelFactory(repository)
         val viewModel = ViewModelProvider(this, factory).get(RegisterViewModel::class.java)
-         binding.myViewModel = viewModel
+        binding.myViewModel = viewModel
 
         viewModel.message.observe(viewLifecycleOwner, Observer {
             it.getContentIfNotHandled()?.let {
                 Toast.makeText(activity, it, Toast.LENGTH_LONG).show()
             }
         })
-        binding.loginNav.setOnClickListener{
+        binding.loginNav.setOnClickListener {
             findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment())
         }
-        viewModel.navigatetoLogin.observe(viewLifecycleOwner, Observer { hasFinished->
-            if (hasFinished == true){
+        viewModel.navigatetoLogin.observe(viewLifecycleOwner, Observer { hasFinished ->
+            if (hasFinished == true) {
                 findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment())
             }
         })

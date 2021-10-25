@@ -16,9 +16,6 @@ class RegisterViewModel(private val repository: PlayerRepository) : ViewModel() 
     val inputEmail = MutableLiveData<String>()
     val inputUsername = MutableLiveData<String>()
     val inputPassword = MutableLiveData<String>()
-
-    val _savedPlayers: LiveData<List<Player>> = repository.players
-
     private val statusMessage = MutableLiveData<Event<String>>()
 
     private val _navigatetoLogin = MutableLiveData<Boolean>()

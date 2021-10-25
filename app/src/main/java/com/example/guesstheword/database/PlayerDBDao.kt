@@ -2,7 +2,6 @@ package com.example.guesstheword.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import kotlinx.coroutines.flow.Flow
 
 //The DAO is the main component of Room and includes methods that offer access to your apps database it has to be annotated with @Dao. DAOs are used instead of query builders and let you separate different components of your database e.g. current data and statistics, which allows you to easily test your database.
 @Dao

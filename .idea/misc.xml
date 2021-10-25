@@ -3,6 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/drawable/about_android_trivia.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/drawable/android.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/drawable/android_trivia.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/drawable/ic_baseline_assignment_24.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/drawable/ic_guesstheword.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/drawable/ic_images.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/drawable/ic_screenshot_7.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/drawable/nav_header.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/drawable/rules.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/drawable/settings.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/drawable/share.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/drawable/try_again.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/drawable/you_win.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/layout/fragment_login.xml" value="0.22" />
         <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/layout/fragment_player_list.xml" value="0.2375" />
         <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/layout/fragment_registration.xml" value="0.20520833333333333" />
