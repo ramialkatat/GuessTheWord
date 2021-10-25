@@ -22,19 +22,33 @@
             app:destination="@id/registerFragment" />
         <action
             android:id="@+id/action_loginFragment_to_mainActivity"
-            app:destination="@id/mainActivity" />
+            app:destination="@id/navigation2" />
         <action
             android:id="@+id/action_loginFragment_to_playerListFragment"
             app:destination="@id/playerListFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_navigation2"
+            app:destination="@id/navigation2" />
     </fragment>
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.example.guesstheword.MainActivity"
-        android:label="main_activity"
-        tools:layout="@layout/main_activity" />
     <fragment
         android:id="@+id/playerListFragment"
         android:name="com.example.guesstheword.screens.player.PlayerListFragment"
         android:label="fragment_player_list"
-        tools:layout="@layout/fragment_player_list" />
+        tools:layout="@layout/fragment_player_list" >
+        <action
+            android:id="@+id/action_playerListFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <navigation android:id="@+id/navigation2"
+        app:startDestination="@id/mainActivity">
+        <activity
+            android:id="@+id/mainActivity"
+            android:name="com.example.guesstheword.MainActivity"
+            android:label="main_activity"
+            tools:layout="@layout/main_activity"></activity>
+        <action
+            android:id="@+id/action_global_loginFragment"
+            app:destination="@id/loginFragment" />
+    </navigation>
+
 </navigation>

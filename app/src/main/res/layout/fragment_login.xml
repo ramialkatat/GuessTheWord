@@ -17,16 +17,26 @@
         android:orientation="vertical"
         tools:context=".screens.login.LoginFragment">
 
+        <ImageView
+            android:id="@+id/background_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            app:srcCompat="@drawable/ic_bluelogo" />
 
         <EditText
             android:id="@+id/email_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="25dp"
+            android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="Enter your email"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/white_text_color"
+            android:layout_gravity="center"
             android:inputType="textEmailAddress"
             android:text="@={myViewModel.inputEmail}"
             android:textColor="@color/white_text_color"
@@ -38,69 +48,65 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="Enter your password"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/white_text_color"
             android:inputType="textPassword"
             android:text="@={myViewModel.inputPassword}"
             android:textColor="@color/white_text_color"
             android:textColorHint="@color/white_text_color"
             android:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+
+        <Button
+            android:id="@+id/submit_login"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:onClick="@{()->myViewModel.save()}"
+            android:text="sign in"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
             android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/submit_login"
-                android:layout_width="320dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="45dp"
-                android:onClick="@{()->myViewModel.save()}"
-                android:text="submit"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="129dp"
                 android:text="Don't have an account?"
                 android:textColor="@color/white_text_color" />
 
-            <Button
+            <TextView
                 android:id="@+id/registerNav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="108dp"
-                android:layout_weight="1"
-                android:text="Register Here!"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="1dp"
+                android:clickable="true"
+                android:text="Sign up!"
+                android:textColor="@color/white_text_color"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:focusable="true" />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/background_image"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="20dp"
-            app:srcCompat="@drawable/ic_bluelogo" />
 
         <Button
             android:id="@+id/button"
-            android:layout_width="wrap_content"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="95dp"
-            android:layout_marginTop="19dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:text="Show All players"
             android:textAlignment="center"
             android:textSize="18sp"

@@ -14,7 +14,6 @@ import com.example.guesstheword.R
 import com.example.guesstheword.database.PlayerDB
 import com.example.guesstheword.databinding.FragmentLoginBinding
 import com.example.guesstheword.screens.player.PlayerRepository
-import com.example.guesstheword.screens.registration.RegisterFragmentDirections
 
 class LoginFragment : Fragment() {
     override fun onCreateView(
@@ -41,20 +40,20 @@ class LoginFragment : Fragment() {
 
         viewModel.message.observe(viewLifecycleOwner, Observer {
             it.getContentIfNotHandled()?.let {
-                Toast.makeText(activity, it, Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, it, Toast.LENGTH_SHORT).show()
             }
         })
         binding.registerNav.setOnClickListener {
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToRegisterFragment())
         }
-        viewModel.navigatetoGame.observe(viewLifecycleOwner, Observer { hasFinished->
-            if (hasFinished == true){
+        viewModel.navigatetoGame.observe(viewLifecycleOwner, Observer { hasFinished ->
+            if (hasFinished == true) {
                 findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToMainActivity())
             }
         })
-            binding.button.setOnClickListener{
-                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToPlayerListFragment())
-            }
+        binding.button.setOnClickListener {
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToPlayerListFragment())
+        }
 
         return binding.root
     }

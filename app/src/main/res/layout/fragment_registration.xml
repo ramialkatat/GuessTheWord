@@ -17,6 +17,32 @@
         android:orientation="vertical"
         tools:context=".screens.registration.RegisterFragment">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="12dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Create Account"
+                android:textColor="@color/white_text_color"
+                android:textSize="38sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/background_image"
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="12dp"
+                app:srcCompat="@drawable/ic_bluelogo" />
+
+        </LinearLayout>
 
         <EditText
             android:id="@+id/name_text"
@@ -24,6 +50,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:layout_marginBottom="5dp"
+            android:drawableStart="@drawable/ic_baseline_account_circle_24"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/white_text_color"
             android:ems="10"
             android:hint="Enter your name"
             android:inputType="textPersonName"
@@ -40,6 +69,9 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:ems="10"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/white_text_color"
             android:hint="Enter your email"
             android:inputType="textEmailAddress"
             android:text="@={myViewModel.inputEmail}"
@@ -54,6 +86,9 @@
             android:layout_margin="15dp"
             android:layout_marginBottom="5dp"
             android:ems="10"
+            android:drawableStart="@drawable/ic_baseline_assignment_24"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/white_text_color"
             android:hint="Enter your username"
             android:inputType="textPersonName"
             android:text="@={myViewModel.inputUsername}"
@@ -68,6 +103,9 @@
             android:layout_margin="15dp"
             android:layout_marginBottom="5dp"
             android:ems="10"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/white_text_color"
             android:hint="Enter your password"
             android:inputType="textPassword"
             android:text="@={myViewModel.inputPassword}"
@@ -75,46 +113,42 @@
             android:textColorHint="@color/white_text_color"
             android:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/submit_registration"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="@{()->myViewModel.save()}"
+            android:text="submit"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/submit_registration"
-                android:layout_width="320dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="45dp"
-                android:onClick="@{()->myViewModel.save()}"
-                android:text="submit"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="110dp"
                 android:text="Already have an account?"
                 android:textColor="@color/white_text_color" />
 
-            <Button
+            <TextView
                 android:id="@+id/loginNav"
-                android:layout_width="162dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="110dp"
-                android:layout_weight="1"
-                android:text="Login Here!"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="1dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Sign in!"
+                android:textColor="@color/white_text_color"
                 android:textSize="18sp"
                 android:textStyle="bold" />
-        </LinearLayout>
 
+        </LinearLayout>
     </LinearLayout>
 </layout>

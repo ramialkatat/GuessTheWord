@@ -33,7 +33,6 @@
             android:layout_width="match_parent"
             android:layout_height="145dp"
             android:layout_marginTop="17dp"
-            android:layout_marginBottom="17dp"
             android:orientation="vertical">
 
             <TextView
@@ -54,7 +53,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="8dp"
                 android:fontFamily="sans-serif"
                 android:text="@{String.valueOf(scoreViewModel.score)}"
                 android:textAlignment="center"
@@ -65,11 +63,15 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
         <Button
             android:id="@+id/play_again_button"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginBottom="32dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
             android:onClick="@{() -> scoreViewModel.onPlayAgain()}"
             android:text="@string/play_again"
             android:textSize="34sp"
@@ -82,8 +84,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/score_recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="210dp"
             android:layout_margin="5dp" />
-
+    </LinearLayout>
     </LinearLayout>
 </layout>

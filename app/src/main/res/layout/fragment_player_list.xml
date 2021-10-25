@@ -4,10 +4,12 @@
     tools:context=".screens.player.PlayerListFragment">
 
     <data>
+
         <variable
             name="myViewModel"
             type="com.example.guesstheword.screens.player.PlayerViewModel" />
     </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
