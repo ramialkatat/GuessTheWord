@@ -75,14 +75,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="129dp"
                 android:text="Don't have an account?"
-
                 android:textColor="@color/white_text_color" />
 
             <Button
                 android:id="@+id/registerNav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="113dp"
+                android:layout_marginLeft="108dp"
                 android:layout_weight="1"
                 android:text="Register Here!"
                 android:textSize="18sp"
@@ -92,7 +91,7 @@
         <ImageView
             android:id="@+id/background_image"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="200dp"
             android:layout_marginTop="20dp"
             app:srcCompat="@drawable/ic_bluelogo" />
 

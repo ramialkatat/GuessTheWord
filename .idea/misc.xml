@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/layout/fragment_login.xml" value="0.22" />
+        <entry key="..\:/Users/CMEIntern/AndroidStudioProjects/GuessTheWord/app/src/main/res/layout/fragment_registration.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/CMEIntern/Downloads/GuessTheWord/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/CMEIntern/Downloads/GuessTheWord/app/src/main/res/layout/fragment_registration.xml" value="0.33" />
         <entry key="..\:/Users/CMEIntern/Downloads/GuessTheWord/app/src/main/res/layout/game_fragment.xml" value="0.17831813576494426" />
