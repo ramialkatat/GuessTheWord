@@ -27,9 +27,9 @@ class RegisterViewModel(private val repository: PlayerRepository) : ViewModel() 
 
     fun save() {
         if (inputName.value == null) {
-            statusMessage.value = Event("Please enter player's name")
+            statusMessage.value = Event("Please enter a valid name")
         } else if (inputEmail.value == null) {
-            statusMessage.value = Event("Please enter player's email")
+            statusMessage.value = Event("Please enter an email")
         } else if (inputUsername.value == null) {
             statusMessage.value = Event("Please enter a username")
         } else if (inputPassword.value == null) {
