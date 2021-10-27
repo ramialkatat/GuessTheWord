@@ -4,8 +4,8 @@ import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.example.guesstheword.database.Player
-import com.example.guesstheword.database.PlayerDB
-import com.example.guesstheword.database.PlayerDBDao
+import com.example.guesstheword.database.GameDB
+import com.example.guesstheword.database.GameDBDao
 import junit.framework.Assert.assertEquals
 import kotlinx.coroutines.runBlocking
 import org.junit.After
@@ -17,19 +17,19 @@ import java.io.IOException
 @RunWith(AndroidJUnit4::class)
 class GameDBTest {
 
-    private lateinit var gameDao: PlayerDBDao
-    private lateinit var db: PlayerDB
+    private lateinit var gameDao: GameDBDao
+    private lateinit var db: GameDB
 
     @Before
     fun createDb() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         // Using an in-memory database because the information stored here disappears when the
         // process is killed.
-        db = Room.inMemoryDatabaseBuilder(context, PlayerDB::class.java)
+        db = Room.inMemoryDatabaseBuilder(context, GameDB::class.java)
             // Allowing main thread queries, just for testing.
             .allowMainThreadQueries()
             .build()
-        gameDao = db.playerDBDao
+        gameDao = db.gameDBDao
     }
 
     @After
@@ -40,7 +40,7 @@ class GameDBTest {
 
     @Test
     @Throws(Exception::class)
-    fun insertAndGetPlayer()=runBlocking {
+    fun insertAndGetPlayer() = runBlocking {
         val player = Player()
         gameDao.insertPlayer(player)
         val current = gameDao.getPlayer()

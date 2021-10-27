@@ -15,15 +15,4 @@ class PlayerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.player_activity)
     }
-
-//    private fun listItemClicked(player: Player){
-//        playerViewModel.initUpdateAndDelete(player)
-//    }
-//
-//    private fun initRecyclerView(){
-//        adapter = RecyclerViewAdapter({selectedItem: Player ->listItemClicked(selectedItem)})
-//        binding.playerRecyclerView.layoutManager = LinearLayoutManager(this)
-//        binding.playerRecyclerView.adapter = adapter
-//        displayPlayersList()
-//    }
 }

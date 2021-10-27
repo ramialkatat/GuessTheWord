@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.guesstheword.R
-import com.example.guesstheword.database.PlayerDB
+import com.example.guesstheword.database.GameDB
 import com.example.guesstheword.databinding.FragmentLoginBinding
 import com.example.guesstheword.screens.player.PlayerRepository
 
@@ -32,7 +32,7 @@ class LoginFragment : Fragment() {
 
         val application = requireNotNull(this.activity).application
 
-        val dao = PlayerDB.getInstance(application).playerDBDao
+        val dao = GameDB.getInstance(application).gameDBDao
         val repository = PlayerRepository(dao)
         val factory = LoginViewModelFactory(repository)
         val viewModel = ViewModelProvider(this, factory).get(LoginViewModel::class.java)

@@ -5,7 +5,7 @@ import androidx.room.*
 
 //The DAO is the main component of Room and includes methods that offer access to your apps database it has to be annotated with @Dao. DAOs are used instead of query builders and let you separate different components of your database e.g. current data and statistics, which allows you to easily test your database.
 @Dao
-interface PlayerDBDao {
+interface GameDBDao {
     @Insert
     suspend fun insertPlayer(player: Player): Long //when insert is called, Room creates the row from the entity object and inserts it into the DB
 

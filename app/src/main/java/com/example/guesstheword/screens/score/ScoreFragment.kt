@@ -15,7 +15,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.guesstheword.R
-import com.example.guesstheword.database.PlayerDB
+import com.example.guesstheword.database.GameDB
 import com.example.guesstheword.database.Score
 import com.example.guesstheword.databinding.ScoreFragmentBinding
 
@@ -39,7 +39,7 @@ class ScoreFragment : Fragment() {
         )
         val application = requireNotNull(this.activity).application
 
-        val dao = PlayerDB.getInstance(application).playerDBDao
+        val dao = GameDB.getInstance(application).gameDBDao
         val repository = ScoreRepository(dao)
         val scoreFragmentArgs by navArgs<ScoreFragmentArgs>()
         val viewModelFactory =

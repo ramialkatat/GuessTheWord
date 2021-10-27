@@ -13,14 +13,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.example.guesstheword.R
-import com.example.guesstheword.database.PlayerDB
 import com.example.guesstheword.databinding.GameFragmentBinding
-import com.example.guesstheword.screens.score.ScoreFragmentArgs
-import com.example.guesstheword.screens.score.ScoreRepository
-import com.example.guesstheword.screens.score.ScoreViewModel
-import com.example.guesstheword.screens.score.ScoreViewModelFactory
 
 /**
  * Fragment where the game is played
@@ -49,29 +43,7 @@ class GameFragment : Fragment() {
             viewModel // Set the viewmodel for databinding - this allows the bound layout access to all of the data in the VieWModel
 
 
-        binding.lifecycleOwner =
-            this//viewLifecycleOwner allows us to use Live Data to automatically update our data binding layouts
-
-//        binding.correctButton.setOnClickListener {
-//            viewModel.onCorrect()
-//        }
-//        binding.skipButton.setOnClickListener {
-//            viewModel.onSkip()
-//        } unnecessary to write these lines because I set the onClick in the xml layout
-
-        /** Setting up LiveData observation relationship **/
-//        viewModel.word.observe(viewLifecycleOwner, Observer { newWord ->
-//            binding.wordText.text = newWord
-//        }) we don't need the observer after using viewLifecycleOwner which helps us update our data binding layouts automatically
-
-//        viewModel.score.observe(viewLifecycleOwner, Observer { newScore ->
-//            binding.scoreText.text = newScore.toString()
-//        }) //not needed anymore
-
-//        viewModel.currentTime.observe(viewLifecycleOwner, Observer { newTime ->
-//            binding.timerText.text = DateUtils.formatElapsedTime(newTime)
-//
-//        }) //not needed anymore
+        binding.lifecycleOwner = this
 
         // Sets up event listening to navigate the player when the game is finished
         viewModel.eventGameFinish.observe(viewLifecycleOwner, Observer { isFinished ->
@@ -89,7 +61,6 @@ class GameFragment : Fragment() {
                 viewModel.onBuzzComplete()
             }
         })
-
         return binding.root
 
     }

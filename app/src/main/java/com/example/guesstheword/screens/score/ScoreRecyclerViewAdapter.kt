@@ -16,7 +16,8 @@ class ScoreRecyclerViewAdapter(private val clickListener: (Score) -> Unit) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding: ScoresListBinding = DataBindingUtil.inflate(layoutInflater, R.layout.scores_list, parent, false)
+        val binding: ScoresListBinding =
+            DataBindingUtil.inflate(layoutInflater, R.layout.scores_list, parent, false)
         return MyViewHolder(binding)
     }
 

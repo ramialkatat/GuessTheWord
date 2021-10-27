@@ -3,7 +3,6 @@ package com.example.guesstheword.screens.login
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.guesstheword.screens.player.PlayerRepository
-import com.example.guesstheword.screens.registration.RegisterViewModel
 
 class LoginViewModelFactory(
     private val repository: PlayerRepository

@@ -1,10 +1,10 @@
 package com.example.guesstheword.screens.player
 
 import com.example.guesstheword.database.Player
-import com.example.guesstheword.database.PlayerDBDao
+import com.example.guesstheword.database.GameDBDao
 
 
-class PlayerRepository(private val dao: PlayerDBDao) {
+class PlayerRepository(private val dao: GameDBDao) {
 
     val players = dao.getAllPlayers()
 

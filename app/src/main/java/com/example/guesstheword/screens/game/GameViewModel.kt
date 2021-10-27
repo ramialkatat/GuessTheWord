@@ -2,10 +2,10 @@ package com.example.guesstheword.screens.game
 
 import android.os.CountDownTimer
 import android.text.format.DateUtils
-import androidx.lifecycle.*
-import com.example.guesstheword.database.Score
-import com.example.guesstheword.screens.score.ScoreRepository
-import kotlinx.coroutines.launch
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
+import androidx.lifecycle.ViewModel
 
 private val CORRECT_BUZZ_PATTERN = longArrayOf(100, 100, 100, 100, 100, 100)
 private val PANIC_BUZZ_PATTERN = longArrayOf(0, 200)
@@ -33,7 +33,8 @@ class GameViewModel : ViewModel() {
         // This is the number of milliseconds in a second
         private const val ONE_SECOND = 1000L
 
-        private const val COUNTDOWN_PANIC_SECONDS=3L
+        private const val COUNTDOWN_PANIC_SECONDS = 3L
+
         // This is the total time of the game
         private const val COUNTDOWN_TIME =
             10000L //a normal countdown would be 60 secs, but I've chosen it to be 10 for testing purposes
@@ -84,14 +85,14 @@ class GameViewModel : ViewModel() {
 
             override fun onTick(millisUntilFinished: Long) {
                 _currentTime.value = (millisUntilFinished / ONE_SECOND)
-                if(millisUntilFinished/ ONE_SECOND<= COUNTDOWN_PANIC_SECONDS)
-                    _eventBuzz.value=BuzzType.COUNTDOWN_PANIC
+                if (millisUntilFinished / ONE_SECOND <= COUNTDOWN_PANIC_SECONDS)
+                    _eventBuzz.value = BuzzType.COUNTDOWN_PANIC
             }
 
             override fun onFinish() {
                 _currentTime.value = DONE
                 _eventGameFinish.value = true
-                _eventBuzz.value=BuzzType.GAME_OVER
+                _eventBuzz.value = BuzzType.GAME_OVER
             }
         }
 

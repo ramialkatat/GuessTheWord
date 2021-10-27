@@ -1,8 +1,10 @@
 package com.example.guesstheword.screens.score
 
 import android.app.Application
-import androidx.lifecycle.*
-import com.example.guesstheword.database.Player
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.example.guesstheword.database.Score
 import kotlinx.coroutines.launch
 
@@ -49,7 +51,7 @@ class ScoreViewModel(
         val newScore = Score(lastUpdate = "")
         newScore.score = _score.value!!
         insertScore(newScore)
-        _won.value = _score.value!!>0
+        _won.value = _score.value!! > 0
     }
 
     private fun insertScore(score: Score) = viewModelScope.launch {
