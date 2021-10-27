@@ -1,6 +1,5 @@
 package com.example.guesstheword.screens.score
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -31,7 +30,6 @@ class ScoreFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-
         // Inflate view and obtain an instance of the binding class.
         val binding: ScoreFragmentBinding = DataBindingUtil.inflate(
             inflater,
@@ -48,7 +46,11 @@ class ScoreFragment : Fragment() {
             ScoreViewModelFactory(scoreFragmentArgs.score, repository, application)
         val viewModel = ViewModelProvider(this, viewModelFactory).get(ScoreViewModel::class.java)
         val adapter = ScoreRecyclerViewAdapter { selectedItem: Score ->
-            Toast.makeText(activity, "Score ${selectedItem.scoreID} was selected", Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                activity,
+                "Score ${selectedItem.scoreID} was selected",
+                Toast.LENGTH_LONG
+            ).show()
         }
 
         // Add observer for score
