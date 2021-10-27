@@ -18,6 +18,9 @@ interface PlayerDBDao {
     @Delete
     suspend fun deletePlayer(player: Player): Int
 
+    @Query("SELECT * FROM Player ORDER BY P_ID DESC LIMIT 1")
+    suspend fun getPlayer(): Player?
+
     @Query("DELETE FROM Player")//Query that deletes everything from the table
     suspend fun deleteAll(): Int
 

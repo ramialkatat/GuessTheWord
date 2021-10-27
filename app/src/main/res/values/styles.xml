@@ -9,7 +9,7 @@
     </style>
 
     <!-- Button Styles -->
-    <style name="GoButton" parent="Widget.AppCompat.Button.Colored">
+    <style name="GoButton" parent="Widget.AppCompat.Button.Colored">z
         <item name="colorButtonNormal">@color/ok_green_color</item>
         <item name="colorControlHighlight">@color/selected_green_color</item>
         <item name="android:textColor">@color/white_text_color</item>

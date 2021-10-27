@@ -80,11 +80,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/score_recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="210dp"
+            android:layout_height="match_parent"
             android:layout_margin="5dp" />
     </LinearLayout>
     </LinearLayout>
