@@ -54,7 +54,9 @@ class LoginFragment : Fragment() {
         binding.button.setOnClickListener {
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToPlayerListFragment())
         }
-
+        binding.buttonactivity.setOnClickListener {
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToNewActivity2())
+        }
         return binding.root
     }
 }

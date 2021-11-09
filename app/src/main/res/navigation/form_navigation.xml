@@ -29,6 +29,9 @@
         <action
             android:id="@+id/action_loginFragment_to_navigation2"
             app:destination="@id/navigation2" />
+        <action
+            android:id="@+id/action_loginFragment_to_newActivity2"
+            app:destination="@id/newActivity2" />
     </fragment>
     <fragment
         android:id="@+id/playerListFragment"
@@ -50,5 +53,10 @@
             android:id="@+id/action_global_loginFragment"
             app:destination="@id/loginFragment" />
     </navigation>
+    <activity
+        android:id="@+id/newActivity2"
+        android:name="com.example.guesstheword.apidemo.NewActivity"
+        android:label="activity_new"
+        tools:layout="@layout/activity_new" />
 
 </navigation>

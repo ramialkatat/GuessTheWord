@@ -111,5 +111,15 @@
             android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold" />
+        <Button
+            android:id="@+id/buttonactivity"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Go to activity"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </layout>
